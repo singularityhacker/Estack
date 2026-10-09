@@ -1,0 +1,30 @@
+{
+	"name": "estack",
+	"displayName": "estack",
+	"version": "0.1.0",
+	"description": "Production-grade Elixir/Phoenix skill pack. Context boundaries, Ecto patterns, LiveView conventions, quality gates, and agent safety -- extracted from a real banking app on the BEAM.",
+	"author": {
+		"name": "Justice Conder"
+	},
+	"homepage": "https://github.com/justiceconder/estack",
+	"license": "MIT",
+	"keywords": [
+		"estack",
+		"elixir",
+		"phoenix",
+		"liveview",
+		"ecto",
+		"oban",
+		"beam",
+		"skill-pack"
+	],
+	"category": "developer-tools",
+	"tags": [
+		"elixir",
+		"phoenix",
+		"workflow",
+		"quality",
+		"testing"
+	],
+	"skills": "./skills/"
+}
