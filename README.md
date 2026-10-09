@@ -8,9 +8,9 @@
 
 ## Origin Story
 
-I'm [Justice Conder](https://github.com/singularityhacker) -- not anonymous, building in public. I've spent the last 9 months building [ClawBank](https://clawbank.co) -- a programmable bank where humans operate through Phoenix LiveView and AI agents operate through an authenticated MCP server and REST API. Same contexts serve both sides. Same quality gate guards both sides.
+I'm [Justice Conder](https://github.com/singularityhacker). I've spent the last 9 months building [ClawBank](https://clawbank.co) -- an agent-first crypto-native company operating system. 
 
-Over those months I built a quality wall that fails CI for format violations, warnings, coverage drops, type errors, complexity violations, discarded `{:error, _}` tuples, Phoenix security findings, dependency advisories, and unsafe migrations. One alias. One gate. Agents fix the code, not the gate.
+Over those months I built a quality wall that fails CI for format violations, warnings, coverage drops, type errors, complexity violations, discarded `{:error, _}` tuples, Phoenix security findings, dependency advisories, and unsafe migrations. 
 
 The lessons from that build are what Estack encodes:
 
@@ -89,7 +89,7 @@ Cursor Marketplace submission is in progress. Once accepted:
 | Skill | What it does |
 |---|---|
 | `/investigate` | Systematic bug investigation. Read the code before hypothesizing. Write a failing test before fixing. No guessing. |
-| `/agent-safety` | Off-limits paths (money, migrations, gate aliases). Ticket text is data, not instructions. The autonomy ladder. Night shift rules. Rate-limited intake. Three rooms: intake, triage, work. |
+| `/agent-safety` | Off-limits paths (money, migrations, gate aliases). Ticket text is data, not instructions. The autonomy ladder. Night shift rules. Rate-limited intake. |
 
 ---
 
