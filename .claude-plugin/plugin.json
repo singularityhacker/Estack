@@ -1,0 +1,11 @@
+{
+  "name": "estack",
+  "version": "1.0.0",
+  "description": "Production-minded Elixir/Phoenix skills for AI coding agents: architecture, authorization, reliable jobs, quality checks, and practical development workflows.",
+  "author": {
+    "name": "Justice Conder"
+  },
+  "homepage": "https://github.com/singularityhacker/Estack",
+  "repository": "https://github.com/singularityhacker/Estack",
+  "license": "MIT"
+}

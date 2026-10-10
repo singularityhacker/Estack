@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Debug"
+  short_description: "Reproduce and fix Elixir/Phoenix failures"
+  default_prompt: "Use $estack-debug to investigate this failure from symptoms and code evidence."

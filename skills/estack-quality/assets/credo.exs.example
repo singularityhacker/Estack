@@ -1,0 +1,17 @@
+# Merge with the existing .credo.exs; keep other approved checks enabled.
+%{
+  configs: [
+    %{
+      name: "default",
+      files: %{included: ["lib/", "test/"], excluded: []},
+      requires: ["lib/mix/estack/discarded_result.ex"],
+      strict: true,
+      checks: [
+        {Credo.Check.Refactor.CyclomaticComplexity, max_complexity: 9},
+        {Credo.Check.Refactor.Nesting, max_nesting: 2},
+        {Credo.Check.Readability.ModuleDoc, []},
+        {Estack.Check.DiscardedResult, repo_modules: ["Repo"]}
+      ]
+    }
+  ]
+}

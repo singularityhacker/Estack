@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Doctor"
+  short_description: "Inspect setup and prioritize useful improvements"
+  default_prompt: "Use $estack-doctor to inspect this project and report prioritized improvements without changing files."

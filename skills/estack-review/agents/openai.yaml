@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Review"
+  short_description: "Find actionable defects in Elixir/Phoenix changes"
+  default_prompt: "Use $estack-review to review this diff for correctness, security, and regressions."

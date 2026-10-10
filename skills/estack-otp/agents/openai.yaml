@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack OTP"
+  short_description: "Choose processes, supervision, tasks, and ETS"
+  default_prompt: "Use $estack-otp to review the process design and failure handling for this operation."

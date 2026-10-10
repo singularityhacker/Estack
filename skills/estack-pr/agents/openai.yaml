@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack PR Preparation"
+  short_description: "Prepare verified changes and accurate PR summaries"
+  default_prompt: "Use $estack-pr to verify this change and prepare an accurate review summary."

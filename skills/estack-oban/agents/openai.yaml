@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Oban"
+  short_description: "Design durable jobs and idempotent effects"
+  default_prompt: "Use $estack-oban to design this background operation with explicit retries and idempotency."

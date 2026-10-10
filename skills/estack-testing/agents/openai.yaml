@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Testing"
+  short_description: "Test behavior, permissions, failures, and retries"
+  default_prompt: "Use $estack-testing to add focused regression coverage for this behavior."

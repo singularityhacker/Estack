@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Security"
+  short_description: "Protect authentication and application boundaries"
+  default_prompt: "Use $estack-security to review this change’s authorization and input boundaries."

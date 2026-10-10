@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack TDD"
+  short_description: "Implement behavior with red-green-refactor"
+  default_prompt: "Use $estack-tdd to implement this behavior through a focused red-green-refactor loop."

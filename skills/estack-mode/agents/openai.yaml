@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Guide"
+  short_description: "Choose the right workflow for this Phoenix task"
+  default_prompt: "Use $estack-mode to select the relevant Estack workflow for this task."

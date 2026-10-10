@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Deploy"
+  short_description: "Prepare releases and observable rollouts"
+  default_prompt: "Use $estack-deploy to review this application’s release and rollout plan."

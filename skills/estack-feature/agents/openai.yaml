@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Feature"
+  short_description: "Build Phoenix features across application layers"
+  default_prompt: "Use $estack-feature to implement this feature across the domain, interface, and tests."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Elixir"
+  short_description: "Write clear Elixir and handle expected errors"
+  default_prompt: "Use $estack-elixir to improve this Elixir code while preserving its intended behavior."

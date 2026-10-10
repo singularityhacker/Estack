@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Agent Safety"
+  short_description: "Apply task scope and permissions to agent work"
+  default_prompt: "Use $estack-safety to check the authorized scope and safe execution plan for this task."

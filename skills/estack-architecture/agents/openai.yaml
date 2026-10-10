@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Architecture"
+  short_description: "Design contexts and application boundaries"
+  default_prompt: "Use $estack-architecture to design this feature around the existing application boundaries."

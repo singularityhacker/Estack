@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Ecto"
+  short_description: "Scope data access and protect database integrity"
+  default_prompt: "Use $estack-ecto to implement this data change with scoped access and safe migrations."

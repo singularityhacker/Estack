@@ -1,0 +1,55 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: estack-validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate skill package
+        run: python3 scripts/validate.py
+      - name: Test static inspector and validator
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Smoke-test client installation paths
+        env:
+          DISABLE_TELEMETRY: '1'
+          DO_NOT_TRACK: '1'
+        run: python3 scripts/test_install.py
+
+  elixir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: '27.3'
+          elixir-version: '1.18.4'
+      - name: Fetch validation dependencies
+        working-directory: tests/quality_fixture
+        run: mix deps.get
+      - name: Check fixture formatting
+        working-directory: tests/quality_fixture
+        run: mix format --check-formatted
+      - name: Test Credo check and code examples
+        working-directory: tests/quality_fixture
+        run: mix test

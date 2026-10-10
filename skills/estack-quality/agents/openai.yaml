@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Quality"
+  short_description: "Configure practical checks and preserve failures"
+  default_prompt: "Use $estack-quality to inspect the existing quality gate and recommend useful improvements."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack LiveView"
+  short_description: "Build authenticated and responsive LiveView screens"
+  default_prompt: "Use $estack-liveview to implement this LiveView behavior using the project’s existing components."

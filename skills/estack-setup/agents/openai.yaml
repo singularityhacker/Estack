@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Setup"
+  short_description: "Adopt Estack while preserving project conventions"
+  default_prompt: "Use $estack-setup to set up Estack for this project using its existing conventions."
