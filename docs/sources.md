@@ -14,6 +14,10 @@ Justice Conder's work on [ClawBank](https://clawbank.co) supplied the original c
 
 These links record acknowledged inspiration, not a claim that all current wording was copied from those projects. The prelaunch README also referred to five unnamed Elixir packs; their identities were not recorded in this repository. That unsupported count has been removed. Add precise source/commit attribution when provenance can be established, and retain required notices for any copied code or text.
 
+## Evaluation workflow
+
+The v1.1 evaluation protocol is inspired by [Pstack's Eval playbook](https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/eval.md), surfaced by [kaito](https://zenn.dev/sc30gsw). Estack implements its own case format, orchestration, Elixir graders, and reports. See [evaluations](evals.md) for measured scope and limitations.
+
 ## Technical references
 
 - [Elixir](https://hexdocs.pm/elixir/) and [OTP](https://www.erlang.org/doc/): process, task, and language behavior.

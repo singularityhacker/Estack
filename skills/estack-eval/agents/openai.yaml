@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estack Eval"
+  short_description: "Compare skill revisions with blind tasks and checks"
+  default_prompt: "Use $estack-eval to compare this skill change on the same tasks with blind workers and a separate reviewer."

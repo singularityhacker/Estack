@@ -19,6 +19,7 @@ Load the named skill through the client's skill loader. If that is unavailable, 
 | Reproduce and fix a bug | `estack-debug` |
 | Review a diff for actionable defects | `estack-review` |
 | Prepare a change summary or PR | `estack-pr` |
+| Compare skill versions with blind tasks and executable checks | `estack-eval` |
 | Context boundaries, API adapters, Ash coexistence | `estack-architecture` |
 | Schemas, scoping, transactions, migrations | `estack-ecto` |
 | Forms, streams, components, hooks, UI | `estack-liveview` |

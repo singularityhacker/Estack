@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "webhook-receipt",
+  "title": "Webhook acceptance boundary",
+  "skills": [
+    "estack-oban",
+    "estack-security"
+  ],
+  "editable": [
+    "lib/webhook.ex"
+  ],
+  "checks": [
+    {
+      "id": "receipt_before_ack",
+      "critical": true
+    },
+    {
+      "id": "persist_failure_retried",
+      "critical": true
+    },
+    {
+      "id": "duplicate_acknowledged",
+      "critical": false
+    },
+    {
+      "id": "invalid_signature_rejected",
+      "critical": true
+    },
+    {
+      "id": "raw_body_preserved",
+      "critical": true
+    },
+    {
+      "id": "unexpected_persistence_failure",
+      "critical": false
+    }
+  ],
+  "rubric": [
+    {
+      "id": "durability",
+      "description": "Acknowledge only after durable acceptance or a known duplicate.",
+      "max_score": 2
+    },
+    {
+      "id": "authenticity",
+      "description": "Verify the exact received bytes before parsing or persistence.",
+      "max_score": 2
+    },
+    {
+      "id": "failure_contract",
+      "description": "Keep expected failures explicit without claiming a durable job ran.",
+      "max_score": 2
+    }
+  ]
+}

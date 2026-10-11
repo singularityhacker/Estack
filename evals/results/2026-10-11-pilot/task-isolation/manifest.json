@@ -1,0 +1,72 @@
+{
+  "amendments": [
+    {
+      "new_case_hash": "02accef2a1257c0f92a66a965d50a2c83fe48f4727db163b9be31270cbc4ca5d",
+      "previous_case_hash": "7f7cb80fdfc164f96fc93bab69c186e1acd7324bbefde1f420f74893a65ae752",
+      "reason": "Calibration before scoring found an invalid guard form in refute_receive. Replaced it with the intended two-tuple mailbox pattern; task, rubric, public fixture, and check IDs are unchanged.",
+      "time": "2026-10-11T13:30:04.922147+00:00"
+    }
+  ],
+  "case_hash": "02accef2a1257c0f92a66a965d50a2c83fe48f4727db163b9be31270cbc4ca5d",
+  "case_id": "task-isolation",
+  "created_at": "2026-10-11T13:26:41.479046+00:00",
+  "effort": null,
+  "isolation": "separate directories; shared host, not a security sandbox",
+  "model": null,
+  "planned_pairs": 1,
+  "schema_version": 1,
+  "workers": [
+    {
+      "condition": "baseline",
+      "id": "ledger-p737b71w",
+      "initial_files": {
+        "AGENTS.md": "ab522d427825e7f0e225670948084509447cc57e6b69c9f49012a7f30f4dcebe",
+        "REQUEST.md": "c09d2a96a73380fe8b956d9e3a1840088af8dce3dd2b4ad885d7810d283f5319",
+        "lib/vendor_read.ex": "05eeb08bd737b86b7daf4ce27891c05c5f4978aeafee7c5679170c855e732169",
+        "mix.exs": "1f44547b9b39d3744aa6d0a01c9c125b6701ccd279ed7ebc62b28489bb481caf",
+        "test/smoke.exs": "f237cca6ec263d5f1011b7cb4565985c992d438b576d2fa3226938c725cebb85"
+      },
+      "instructions": {},
+      "pair": 1,
+      "record": {
+        "cost_usd": null,
+        "effort": null,
+        "model": null,
+        "recorded_at": "2026-10-11T13:30:04.965233+00:00",
+        "seconds": null,
+        "skill_read_evidence": "not collected by this runner",
+        "status": "completed",
+        "tokens": null
+      },
+      "workspace": "/tmp/workrooms/ledger-p737b71w"
+    },
+    {
+      "condition": "candidate",
+      "id": "ledger-u5pa0_1t",
+      "initial_files": {
+        ".agents/skills/estack-otp/SKILL.md": "3afa5492641cf04eb6bf92cf95d7ed70ed50fbca07952f4f5eb7632f94f72c29",
+        ".agents/skills/estack-otp/agents/openai.yaml": "dbc328f9780d61cc6ee6f833df8e07ced009b34099b8c134963bb2148ce614a3",
+        "AGENTS.md": "ab522d427825e7f0e225670948084509447cc57e6b69c9f49012a7f30f4dcebe",
+        "REQUEST.md": "c09d2a96a73380fe8b956d9e3a1840088af8dce3dd2b4ad885d7810d283f5319",
+        "lib/vendor_read.ex": "05eeb08bd737b86b7daf4ce27891c05c5f4978aeafee7c5679170c855e732169",
+        "mix.exs": "1f44547b9b39d3744aa6d0a01c9c125b6701ccd279ed7ebc62b28489bb481caf",
+        "test/smoke.exs": "f237cca6ec263d5f1011b7cb4565985c992d438b576d2fa3226938c725cebb85"
+      },
+      "instructions": {
+        "estack-otp": "f00a706dc2a86eaf71816b386165ee2939c3f09f715a30a64999267f1f79c218"
+      },
+      "pair": 1,
+      "record": {
+        "cost_usd": null,
+        "effort": null,
+        "model": null,
+        "recorded_at": "2026-10-11T13:30:04.966917+00:00",
+        "seconds": null,
+        "skill_read_evidence": "not collected by this runner",
+        "status": "completed",
+        "tokens": null
+      },
+      "workspace": "/tmp/workrooms/ledger-u5pa0_1t"
+    }
+  ]
+}

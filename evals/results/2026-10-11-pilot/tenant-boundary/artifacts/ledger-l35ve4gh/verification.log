@@ -1,0 +1,1 @@
+ESTACK_RESULT {"checks":[{"id":"owner_update","passed":true,"detail":"passed"},{"id":"cross_tenant_denied","passed":true,"detail":"passed"},{"id":"viewer_denied","passed":true,"detail":"passed"},{"id":"ownership_preserved","passed":true,"detail":"passed"},{"id":"unknown_invoice","passed":true,"detail":"passed"},{"id":"invalid_title","passed":true,"detail":"passed"}]}

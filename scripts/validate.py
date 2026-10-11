@@ -83,6 +83,7 @@ def validate(root=ROOT):
     # Check all repository Markdown outside dependencies / VCS. No network required.
     paths = [root / "README.md", root / "CONTRIBUTING.md", root / "CHANGELOG.md", root / "AGENTS.md"]
     paths += list((root / "docs").rglob("*.md")) + list((root / "skills").rglob("*.md"))
+    paths += list((root / "evals/cases").rglob("*.md")) + list((root / "evals/results").rglob("*.md"))
     for path in paths:
         if not path.is_file():
             errors.append(f"Missing document: {path.relative_to(root)}")

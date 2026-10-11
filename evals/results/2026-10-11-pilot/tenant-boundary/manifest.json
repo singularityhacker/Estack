@@ -1,0 +1,67 @@
+{
+  "case_hash": "f7e67563894b3be76da6ffd6cf526abfa14ae85640d2c89f24131e01ebb19416",
+  "case_id": "tenant-boundary",
+  "created_at": "2026-10-11T13:26:41.484606+00:00",
+  "effort": null,
+  "isolation": "separate directories; shared host, not a security sandbox",
+  "model": null,
+  "planned_pairs": 1,
+  "schema_version": 1,
+  "workers": [
+    {
+      "condition": "baseline",
+      "id": "ledger-09gn6u0w",
+      "initial_files": {
+        "AGENTS.md": "ab522d427825e7f0e225670948084509447cc57e6b69c9f49012a7f30f4dcebe",
+        "REQUEST.md": "22b3ee32abae86c491774807e947f3f8478d2f4a191e469526eb9f790096c735",
+        "lib/invoices.ex": "ff5d6b0ea9985d9db8aa240887dce452002a753cc88b0eaa560a2a340aab64ce",
+        "mix.exs": "1f44547b9b39d3744aa6d0a01c9c125b6701ccd279ed7ebc62b28489bb481caf",
+        "test/smoke.exs": "eec74e205391453727a8916ce6db8eded3c26ea0ffc774065dd8fe5f5b47129f"
+      },
+      "instructions": {},
+      "pair": 1,
+      "record": {
+        "cost_usd": null,
+        "effort": null,
+        "model": null,
+        "recorded_at": "2026-10-11T13:30:06.028473+00:00",
+        "seconds": null,
+        "skill_read_evidence": "not collected by this runner",
+        "status": "completed",
+        "tokens": null
+      },
+      "workspace": "/tmp/workrooms/ledger-09gn6u0w"
+    },
+    {
+      "condition": "candidate",
+      "id": "ledger-l35ve4gh",
+      "initial_files": {
+        ".agents/skills/estack-ecto/SKILL.md": "390c31b9e0a1262973c2dac66e1a064a71fda6b4d556f837f39536507f109699",
+        ".agents/skills/estack-ecto/agents/openai.yaml": "3de4dd268c071b81f42adeccd92118de2c1cb8d3c6b87de026963663d837838e",
+        ".agents/skills/estack-security/SKILL.md": "ee902892def7ffc8a0108183f4dcb8774fda4a07eb3d7b1dfb94fb0a3afa1587",
+        ".agents/skills/estack-security/agents/openai.yaml": "2af5f74c4cff54a1adcb175887610aa05af6b67273e0d0264939416348dc53b5",
+        "AGENTS.md": "ab522d427825e7f0e225670948084509447cc57e6b69c9f49012a7f30f4dcebe",
+        "REQUEST.md": "22b3ee32abae86c491774807e947f3f8478d2f4a191e469526eb9f790096c735",
+        "lib/invoices.ex": "ff5d6b0ea9985d9db8aa240887dce452002a753cc88b0eaa560a2a340aab64ce",
+        "mix.exs": "1f44547b9b39d3744aa6d0a01c9c125b6701ccd279ed7ebc62b28489bb481caf",
+        "test/smoke.exs": "eec74e205391453727a8916ce6db8eded3c26ea0ffc774065dd8fe5f5b47129f"
+      },
+      "instructions": {
+        "estack-ecto": "25f5c6683495c03c8e21c1d1cdaf3d87ef09d8bb261e18da8655ed1803d5ae93",
+        "estack-security": "d4f8bb1776ff3968bad864b1b689ff174717f7a4c5ab48a88da77acd2f39c7e2"
+      },
+      "pair": 1,
+      "record": {
+        "cost_usd": null,
+        "effort": null,
+        "model": null,
+        "recorded_at": "2026-10-11T13:30:06.030253+00:00",
+        "seconds": null,
+        "skill_read_evidence": "not collected by this runner",
+        "status": "completed",
+        "tokens": null
+      },
+      "workspace": "/tmp/workrooms/ledger-l35ve4gh"
+    }
+  ]
+}

@@ -33,6 +33,15 @@ mix test
 
 CI uses Elixir 1.18.4 / OTP 27.3. The fixture is a test harness for bundled helpers, not a Phoenix starter app or an agent benchmark. No paid API credentials, database, or vendor services are required.
 
+For evaluation work, read [the guide](docs/evals.md), then run:
+
+```bash
+python3 skills/estack-eval/scripts/eval.py validate --suite evals/cases
+python3 -m unittest discover -s tests/evals -p 'test_*.py'
+```
+
+The runtime suite requires Elixir 1.18+ on PATH. It calibrates reference solutions and seeded failures without model calls. Keep new evaluation tasks, rubrics, and reference solutions outside worker projects; freeze them before running agents. Preserve negative/tied results. Do not change a published pilot's frozen case when strengthening a grader for future runs.
+
 ## Skill changes
 
 Use unique `estack-` names matching directory names and concise frontmatter descriptions. Keep metadata compatible with the Agent Skills format. After a rename/addition, regenerate the README catalog and update the skill count, router, relevant installation notes, and changelog.

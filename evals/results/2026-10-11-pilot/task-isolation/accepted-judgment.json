@@ -1,0 +1,40 @@
+{
+  "judgments": [
+    {
+      "pair_id": "pair-01",
+      "preference": "tie",
+      "rationale": "Both submissions are eligible: their checks.json files report integrity_ok and eligible as true, with all six checks passing. Their implementation files are identical. Both isolate vendor crashes with async_nolink, preserve returned values, map task exits, and complete brutal shutdown after a yield timeout before returning :timeout. They satisfy the synchronous scope and cleanup requirements without introducing infrastructure.",
+      "scores": {
+        "A": {
+          "clarity": {
+            "evidence": "pair-01/A/lib/vendor_read.ex:3-14 uses Task.Supervisor.async_nolink, Task.yield, and Task.shutdown directly. The case explicitly returns {:ok, value}, {:error, {:task_exit, reason}}, or {:error, :timeout}; a returned error tuple remains wrapped as a successful value. checks.json reports successful_read and error_value_preserved passing.",
+            "score": 2
+          },
+          "lifecycle": {
+            "evidence": "pair-01/A/lib/vendor_read.ex:3-14 starts an unlinked task, handles completion and monitored exit, and invokes Task.shutdown(task, :brutal_kill) after a yield timeout before returning. Shutdown handles cleanup even if completion races with the timeout, and task APIs target the task's own reference. checks.json reports crash_isolated, timeout_isolated, no_orphan_after_timeout, and caller_mailbox_clean passing; regression tests also inspect child termination and preservation of unrelated messages.",
+            "score": 2
+          },
+          "scope": {
+            "evidence": "pair-01/A/lib/vendor_read.ex:2-15 preserves run/3 and the provided supervisor, waits synchronously for the optional read, and adds no persistent state, GenServer, queue, or other infrastructure.",
+            "score": 2
+          }
+        },
+        "B": {
+          "clarity": {
+            "evidence": "pair-01/B/lib/vendor_read.ex:3-14 uses the idiomatic async_nolink/yield/shutdown task APIs with three explicit return branches. Normal return values are wrapped unchanged, task exits retain their reason, and timeout returns the required tuple. checks.json reports successful_read and error_value_preserved passing.",
+            "score": 2
+          },
+          "lifecycle": {
+            "evidence": "pair-01/B/lib/vendor_read.ex:3-14 isolates crashes using an unlinked task and handles both yield results and exits. After yield times out, brutal shutdown finishes cleanup before returning :timeout, including when completion races with shutdown. checks.json reports crash_isolated, timeout_isolated, no_orphan_after_timeout, and caller_mailbox_clean passing; test/vendor_read_regression.exs:36-61 verifies stopped children and preservation of unrelated result-shaped and DOWN-shaped messages.",
+            "score": 2
+          },
+          "scope": {
+            "evidence": "pair-01/B/lib/vendor_read.ex:2-15 keeps the synchronous run/3 interface and uses the supervisor passed by the caller. The implementation introduces no durable queue, stateful server, or other infrastructure.",
+            "score": 2
+          }
+        }
+      }
+    }
+  ],
+  "schema_version": 1
+}

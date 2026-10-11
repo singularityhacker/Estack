@@ -1,0 +1,40 @@
+{
+  "judgments": [
+    {
+      "pair_id": "pair-01",
+      "preference": "tie",
+      "rationale": "Both submissions are eligible: their checks.json files report integrity_ok and eligible as true, with all six checks passing. The implementations have identical control flow and differ only in formatting. Both verify untouched bytes, persist only verified events, acknowledge only successful persistence or a duplicate, map expected failures correctly, and let callback exceptions propagate.",
+      "scores": {
+        "A": {
+          "authenticity": {
+            "evidence": "pair-01/A/lib/webhook.ex:3 passes raw_body directly to verify without parsing or mutation. Persistence occurs only within the {:ok, event} branch; line 11 returns 401 after an invalid signature. checks.json reports raw_body_preserved and invalid_signature_rejected passing.",
+            "score": 2
+          },
+          "durability": {
+            "evidence": "pair-01/A/lib/webhook.ex:5-8 waits for persist.(event), returning 202 only for :ok, 200 only for {:error, :duplicate}, and 503 for other persistence errors. checks.json reports receipt_before_ack, duplicate_acknowledged, and persist_failure_retried passing.",
+            "score": 2
+          },
+          "failure_contract": {
+            "evidence": "pair-01/A/lib/webhook.ex:3-12 explicitly distinguishes invalid signature, duplicate, and storage failure using the existing callbacks. There is no rescue or claim that work has executed; unexpected callback exceptions propagate. test/webhook_regression.exs:54-69 covers verifier and persistence exceptions, and checks.json reports unexpected_persistence_failure passing.",
+            "score": 2
+          }
+        },
+        "B": {
+          "authenticity": {
+            "evidence": "pair-01/B/lib/webhook.ex:3 invokes verify with the unchanged raw_body. Only verified {:ok, event} results reach persistence; line 10 returns 401 without persistence on an invalid signature. checks.json reports raw_body_preserved and invalid_signature_rejected passing.",
+            "score": 2
+          },
+          "durability": {
+            "evidence": "pair-01/B/lib/webhook.ex:5-8 calls persist synchronously before selecting any response. :ok yields 202, a known duplicate yields 200, and any other persistence error yields 503. checks.json reports receipt_before_ack, duplicate_acknowledged, and persist_failure_retried passing.",
+            "score": 2
+          },
+          "failure_contract": {
+            "evidence": "pair-01/B/lib/webhook.ex:3-11 keeps expected failures explicit and preserves the callback interface. It neither catches unexpected exceptions nor claims that a durable job has run. test/webhook_regression.exs:53-68 covers propagation of both callback exceptions, and checks.json reports unexpected_persistence_failure passing.",
+            "score": 2
+          }
+        }
+      }
+    }
+  ],
+  "schema_version": 1
+}

@@ -15,9 +15,9 @@ class PackageValidationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for name in ("skills", "docs", ".cursor-plugin", ".claude-plugin"):
+        for name in ("skills", "docs", "evals", ".cursor-plugin", ".claude-plugin"):
             shutil.copytree(ROOT / name, self.root / name,
-                            ignore=shutil.ignore_patterns("__pycache__"))
+                            ignore=shutil.ignore_patterns("__pycache__", "runs"))
         for name in ("README.md", "CONTRIBUTING.md", "CHANGELOG.md", "AGENTS.md", "LICENSE"):
             shutil.copy2(ROOT / name, self.root / name)
 

@@ -27,7 +27,9 @@ jobs:
           node-version: '22'
       - name: Validate skill package
         run: python3 scripts/validate.py
-      - name: Test static inspector and validator
+      - name: Validate evaluation cases
+        run: python3 skills/estack-eval/scripts/eval.py validate --suite evals/cases
+      - name: Test inspector, validator, and evaluation protocol
         run: python3 -m unittest discover -s tests -p 'test_*.py'
       - name: Smoke-test client installation paths
         env:
@@ -44,6 +46,9 @@ jobs:
         with:
           otp-version: '27.3'
           elixir-version: '1.18.4'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Fetch validation dependencies
         working-directory: tests/quality_fixture
         run: mix deps.get
@@ -53,3 +58,5 @@ jobs:
       - name: Test Credo check and code examples
         working-directory: tests/quality_fixture
         run: mix test
+      - name: Calibrate behavioral graders and exercise the evaluation pipeline
+        run: python3 -m unittest discover -s tests/evals -p 'test_*.py'

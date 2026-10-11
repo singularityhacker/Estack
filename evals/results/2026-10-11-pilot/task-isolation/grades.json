@@ -1,0 +1,86 @@
+{
+  "graded_at": "2026-10-11T13:30:06.023395+00:00",
+  "results": [
+    {
+      "artifact_hash": "d5d88b06b5c831e2209c060944be1e0fe179ca30d2eeb7f6b860165150c25b4f",
+      "checks": [
+        {
+          "detail": "passed",
+          "id": "successful_read",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "crash_isolated",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "timeout_isolated",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "no_orphan_after_timeout",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "error_value_preserved",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "caller_mailbox_clean",
+          "passed": true
+        }
+      ],
+      "eligible": true,
+      "id": "ledger-p737b71w",
+      "integrity_errors": [],
+      "snapshot_hash": "1fb5d19868831aa3b269390368fba43da7ef77500e7fe2e1cb2e5521a5953bb6",
+      "status": "completed"
+    },
+    {
+      "artifact_hash": "3987cec112063533f088da7e60f06e0fdb4c9a9d9cc5475ce8afe2e536aadb74",
+      "checks": [
+        {
+          "detail": "passed",
+          "id": "successful_read",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "crash_isolated",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "timeout_isolated",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "no_orphan_after_timeout",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "error_value_preserved",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "caller_mailbox_clean",
+          "passed": true
+        }
+      ],
+      "eligible": true,
+      "id": "ledger-u5pa0_1t",
+      "integrity_errors": [],
+      "snapshot_hash": "69e0b92f07e3d4b4e5641b7225354f573e34181bdaddf1c55301a460de76081b",
+      "status": "completed"
+    }
+  ],
+  "schema_version": 1
+}

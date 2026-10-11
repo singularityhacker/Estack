@@ -1,0 +1,106 @@
+{
+  "amendments": [],
+  "case_hash": "1086dbfc7895eb86fd380dace3a12b594581858f0bbe4b882f8faf2ec01fc55d",
+  "case_id": "webhook-receipt",
+  "confounds": [
+    "Pair 1: actual model not fully observed",
+    "Pair 1: actual effort not fully observed"
+  ],
+  "judge_mapping": {
+    "pair-01": {
+      "A": "ledger-gejy54gu",
+      "B": "ledger-jja_q8uz"
+    }
+  },
+  "judgments": [
+    {
+      "pair_id": "pair-01",
+      "preference": "tie",
+      "rationale": "Both submissions are eligible: their checks.json files report integrity_ok and eligible as true, with all six checks passing. The implementations have identical control flow and differ only in formatting. Both verify untouched bytes, persist only verified events, acknowledge only successful persistence or a duplicate, map expected failures correctly, and let callback exceptions propagate.",
+      "scores": {
+        "A": {
+          "authenticity": {
+            "evidence": "pair-01/A/lib/webhook.ex:3 passes raw_body directly to verify without parsing or mutation. Persistence occurs only within the {:ok, event} branch; line 11 returns 401 after an invalid signature. checks.json reports raw_body_preserved and invalid_signature_rejected passing.",
+            "score": 2
+          },
+          "durability": {
+            "evidence": "pair-01/A/lib/webhook.ex:5-8 waits for persist.(event), returning 202 only for :ok, 200 only for {:error, :duplicate}, and 503 for other persistence errors. checks.json reports receipt_before_ack, duplicate_acknowledged, and persist_failure_retried passing.",
+            "score": 2
+          },
+          "failure_contract": {
+            "evidence": "pair-01/A/lib/webhook.ex:3-12 explicitly distinguishes invalid signature, duplicate, and storage failure using the existing callbacks. There is no rescue or claim that work has executed; unexpected callback exceptions propagate. test/webhook_regression.exs:54-69 covers verifier and persistence exceptions, and checks.json reports unexpected_persistence_failure passing.",
+            "score": 2
+          }
+        },
+        "B": {
+          "authenticity": {
+            "evidence": "pair-01/B/lib/webhook.ex:3 invokes verify with the unchanged raw_body. Only verified {:ok, event} results reach persistence; line 10 returns 401 without persistence on an invalid signature. checks.json reports raw_body_preserved and invalid_signature_rejected passing.",
+            "score": 2
+          },
+          "durability": {
+            "evidence": "pair-01/B/lib/webhook.ex:5-8 calls persist synchronously before selecting any response. :ok yields 202, a known duplicate yields 200, and any other persistence error yields 503. checks.json reports receipt_before_ack, duplicate_acknowledged, and persist_failure_retried passing.",
+            "score": 2
+          },
+          "failure_contract": {
+            "evidence": "pair-01/B/lib/webhook.ex:3-11 keeps expected failures explicit and preserves the callback interface. It neither catches unexpected exceptions nor claims that a durable job has run. test/webhook_regression.exs:53-68 covers propagation of both callback exceptions, and checks.json reports unexpected_persistence_failure passing.",
+            "score": 2
+          }
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Small pilot/development suite; no statistical efficacy claim.",
+    "Model/cost/effort fields are operator observations, not independently measured.",
+    "Shared-host directories are not a security boundary or enforceable blindness.",
+    "Skill usage is not proven by presence or worker self-report.",
+    "Public tasks are susceptible to training/tuning contamination."
+  ],
+  "planned_pairs": 1,
+  "rows": [
+    {
+      "condition": "baseline",
+      "eligible": true,
+      "instructions": {},
+      "pair": 1,
+      "passed": 6,
+      "record": {
+        "cost_usd": null,
+        "effort": null,
+        "model": null,
+        "recorded_at": "2026-10-11T13:30:06.848420+00:00",
+        "seconds": null,
+        "skill_read_evidence": "not collected by this runner",
+        "status": "completed",
+        "tokens": null
+      },
+      "status": "completed",
+      "total": 6,
+      "worker": "ledger-jja_q8uz"
+    },
+    {
+      "condition": "candidate",
+      "eligible": true,
+      "instructions": {
+        "estack-oban": "34360b8b9148872a93483f85b62cf8af3fb81653b41cbf6614ae8fc60395ecf1",
+        "estack-security": "d4f8bb1776ff3968bad864b1b689ff174717f7a4c5ab48a88da77acd2f39c7e2"
+      },
+      "pair": 1,
+      "passed": 6,
+      "record": {
+        "cost_usd": null,
+        "effort": null,
+        "model": null,
+        "recorded_at": "2026-10-11T13:30:06.850004+00:00",
+        "seconds": null,
+        "skill_read_evidence": "not collected by this runner",
+        "status": "completed",
+        "tokens": null
+      },
+      "status": "completed",
+      "total": 6,
+      "worker": "ledger-gejy54gu"
+    }
+  ],
+  "schema_version": 1
+}

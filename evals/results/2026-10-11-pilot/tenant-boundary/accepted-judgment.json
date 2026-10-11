@@ -1,0 +1,40 @@
+{
+  "judgments": [
+    {
+      "pair_id": "pair-01",
+      "preference": "tie",
+      "rationale": "Both submissions are eligible: their checks.json files report integrity_ok and eligible as true, with all six checks passing. Both enforce tenant visibility before edit authority, change only the title, preserve valid submitted whitespace, and return every documented result. A uses a guarded case branch and B uses a nested role check; both are small and clear, with no material rubric-level difference.",
+      "scores": {
+        "A": {
+          "authorization": {
+            "evidence": "pair-01/A/lib/invoices.ex:2-8 matches both invoice id and scope tenant_id before authorizing role :owner; missing and other-tenant invoices return :not_found, while visible invoices for viewers return :forbidden. checks.json confirms owner_update, cross_tenant_denied, viewer_denied, and unknown_invoice pass.",
+            "score": 2
+          },
+          "clarity": {
+            "evidence": "pair-01/A/lib/invoices.ex:2-19 is a single dependency-free function with explicit success, :not_found, :forbidden, and :invalid_title branches. It checks binary type before trimming and stores the original valid title; regression tests cover whitespace preservation and authorization precedence.",
+            "score": 2
+          },
+          "input_contract": {
+            "evidence": "pair-01/A/lib/invoices.ex:11-16 reads only attrs[\"title\"] and updates only :title with Map.put, preserving id, tenant_id, owner_id, and all other stored fields. The original title is stored after a nonblank check. checks.json reports ownership_preserved and invalid_title passing; test/rename_regression.exs:50-63 covers extra identity and role params.",
+            "score": 2
+          }
+        },
+        "B": {
+          "authorization": {
+            "evidence": "pair-01/B/lib/invoices.ex:3-8 scopes lookup to both id and scope.tenant_id, returning :not_found before checking scope.role. Only :owner reaches the update, and lines 16-17 return :forbidden otherwise. checks.json confirms owner_update, cross_tenant_denied, viewer_denied, and unknown_invoice pass.",
+            "score": 2
+          },
+          "clarity": {
+            "evidence": "pair-01/B/lib/invoices.ex:2-20 is a compact dependency-free function with explicit branches for all documented results. The role check precedes title validation, and the binary/nonblank check preserves valid submitted whitespace. Regression tests cover the return contract and lookup precedence.",
+            "score": 2
+          },
+          "input_contract": {
+            "evidence": "pair-01/B/lib/invoices.ex:9-14 reads only the string-keyed title and updates only :title with Map.put, leaving identity and other stored fields unchanged. It trims only to validate, then stores the original title. checks.json reports ownership_preserved and invalid_title passing; test/rename_regression.exs:11-21 covers extra identity params and whitespace.",
+            "score": 2
+          }
+        }
+      }
+    }
+  ],
+  "schema_version": 1
+}

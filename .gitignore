@@ -7,3 +7,4 @@ _build/
 deps/
 cover/
 /tests/quality_fixture/tmp/
+/evals/runs/

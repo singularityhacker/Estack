@@ -1,0 +1,86 @@
+{
+  "graded_at": "2026-10-11T13:30:06.843163+00:00",
+  "results": [
+    {
+      "artifact_hash": "62e2298e935ce29d8bf8e8a640cce3eaa15bfbdbf3cb732b02204945f20179cd",
+      "checks": [
+        {
+          "detail": "passed",
+          "id": "owner_update",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "cross_tenant_denied",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "viewer_denied",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "ownership_preserved",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "unknown_invoice",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "invalid_title",
+          "passed": true
+        }
+      ],
+      "eligible": true,
+      "id": "ledger-09gn6u0w",
+      "integrity_errors": [],
+      "snapshot_hash": "8f634968589427bf69cc23973b027ee48bbcc0dcf5b79f1e634e3d000e4733a8",
+      "status": "completed"
+    },
+    {
+      "artifact_hash": "8e2a4b72af84362b06c85d3ce6eb79d1074a858857971be6085e3d1405a90ba6",
+      "checks": [
+        {
+          "detail": "passed",
+          "id": "owner_update",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "cross_tenant_denied",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "viewer_denied",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "ownership_preserved",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "unknown_invoice",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "invalid_title",
+          "passed": true
+        }
+      ],
+      "eligible": true,
+      "id": "ledger-l35ve4gh",
+      "integrity_errors": [],
+      "snapshot_hash": "bdaea65abc6c8e165374c6fffac112f2e4a86024542ffd0fe3fa073230f0481d",
+      "status": "completed"
+    }
+  ],
+  "schema_version": 1
+}

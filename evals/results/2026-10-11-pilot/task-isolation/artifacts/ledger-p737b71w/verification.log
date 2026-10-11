@@ -1,0 +1,9 @@
+
+09:30:05.425 [error] Task #PID<0.116.0> started from #PID<0.115.0> terminating
+** (RuntimeError) vendor down
+    verify.exs:17: anonymous fn/0 in :elixir_compiler_0.__FILE__/1
+    (elixir 1.18.4) lib/task/supervised.ex:101: Task.Supervised.invoke_mfa/2
+    (elixir 1.18.4) lib/task/supervised.ex:36: Task.Supervised.reply/4
+Function: #Function<13.48026134 in file:verify.exs>
+    Args: []
+ESTACK_RESULT {"checks":[{"id":"successful_read","passed":true,"detail":"passed"},{"id":"crash_isolated","passed":true,"detail":"passed"},{"id":"timeout_isolated","passed":true,"detail":"passed"},{"id":"no_orphan_after_timeout","passed":true,"detail":"passed"},{"id":"error_value_preserved","passed":true,"detail":"passed"},{"id":"caller_mailbox_clean","passed":true,"detail":"passed"}]}

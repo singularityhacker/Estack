@@ -25,8 +25,12 @@ Guidance emphasizes modern Phoenix, including 1.8-style scopes/components, while
 - No app is required to upgrade its language/framework simply to install Estack's instructions.
 - The doctor requires Python 3.10+ and uses only the standard library. Other skills can be used without Python.
 
-## What v1 does not claim
+## Evaluation support in v1.1
 
-No public demo, benchmark suite, measured agent success-rate improvement, complete Phoenix starter application, production security certification, or verified marketplace approval is included. These are deliberately outside this release's scope.
+The portable `estack-eval` workflow and Python runner support paired skill/no-skill or version-to-version tasks, frozen artifacts, Elixir behavioral checks, and anonymous reviewer packets. Executable grading requires Elixir 1.18+ on POSIX; CI uses Elixir 1.18.4 / OTP 27.3. Model execution uses the host agent tools and is not automated by the runner. Three public development cases and a small pilot are documented in [evaluations](evals.md). They are not a full Phoenix/database suite or a held-out benchmark.
+
+## What this release does not claim
+
+No public app demo, statistically established agent success-rate improvement, complete Phoenix starter application, production security certification, or verified marketplace approval is included. The initial eval pilot tied and does not establish a benefit from Estack.
 
 A skill instruction is not an enforceable security boundary. A successful source/metadata check does not prove that an agent will follow every rule.

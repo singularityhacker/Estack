@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "tenant-boundary",
+  "title": "Invoice title update",
+  "skills": [
+    "estack-ecto",
+    "estack-security"
+  ],
+  "editable": [
+    "lib/invoices.ex"
+  ],
+  "checks": [
+    {
+      "id": "owner_update",
+      "critical": false
+    },
+    {
+      "id": "cross_tenant_denied",
+      "critical": true
+    },
+    {
+      "id": "viewer_denied",
+      "critical": true
+    },
+    {
+      "id": "ownership_preserved",
+      "critical": true
+    },
+    {
+      "id": "unknown_invoice",
+      "critical": false
+    },
+    {
+      "id": "invalid_title",
+      "critical": false
+    }
+  ],
+  "rubric": [
+    {
+      "id": "authorization",
+      "description": "Check tenant visibility and edit authority at the context boundary.",
+      "max_score": 2
+    },
+    {
+      "id": "input_contract",
+      "description": "Allowlist editable fields and preserve server-owned identity.",
+      "max_score": 2
+    },
+    {
+      "id": "clarity",
+      "description": "Keep the implementation small and preserve the documented return contract.",
+      "max_score": 2
+    }
+  ]
+}

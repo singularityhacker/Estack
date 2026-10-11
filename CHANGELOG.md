@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.1.0 — 2026-10-11
+
+### Added
+
+- `estack-eval`, bringing the pack to 20 skills, with an installable comparison runner and evaluation protocol inspired by Pstack.
+- Paired skill/no-skill and version-to-version project preparation, opaque worker directories, frozen cases/instruction hashes, and explicit failure/timeout records.
+- Elixir behavioral graders for tenant authorization, task failure isolation, and durable webhook acknowledgement.
+- Protected-file checks, bounded grading, anonymous A/B reviewer packets, rubric validation, and critical gates that a judge cannot override.
+- Known-good and seeded-bug calibration, harness regression tests, and CI without model API credentials.
+- An auditable first pilot: six workers, three paired tasks, 18/18 checks per condition, and three blinded ties. No efficacy improvement is claimed.
+
+### Notes
+
+- Python remains orchestration glue; Elixir performs behavioral verification. The runner does not launch models or provide a hostile-code sandbox.
+- The pilot records its grader syntax amendment, shared-host limits, unknown model/cost details, and next steps toward harder held-out tasks.
+
 ## 1.0.0 — 2026-10-10
 
 ### Added

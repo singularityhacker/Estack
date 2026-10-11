@@ -1,6 +1,6 @@
 {
   "name": "estack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Production-minded Elixir/Phoenix skills for AI coding agents: architecture, authorization, reliable jobs, quality checks, and practical development workflows.",
   "author": {
     "name": "Justice Conder"

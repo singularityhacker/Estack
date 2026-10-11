@@ -7,7 +7,7 @@
 
 Build features through the right application boundaries. Catch tenant leaks and unchecked writes. Keep background work reliable. Give your agent a repeatable way to inspect, implement, debug, and review a Phoenix application.
 
-Estack packages **19 focused skills**, a read-only project inspector, and an optional tested Credo check. It grew out of nine months building [ClawBank](https://clawbank.co), an agent-first company operating system on Elixir/Phoenix.
+Estack packages **20 focused skills**, a read-only project inspector, and an optional tested Credo check. It grew out of nine months building [ClawBank](https://clawbank.co), an agent-first company operating system on Elixir/Phoenix.
 
 ## Install
 
@@ -40,6 +40,7 @@ Then use the workflow that fits:
 | Reproduce and fix a failure | `estack-debug` |
 | Review a change for defects | `estack-review` |
 | Prepare verification and a PR summary | `estack-pr` |
+| Compare skill versions on paired tasks | `estack-eval` |
 | Choose the right skill | `estack-mode` |
 
 Cursor and directly installed Claude Code skills use `/estack-doctor`; Codex uses `$estack-doctor`. Claude plugin installs use the namespace `/estack:estack-doctor`. Natural-language requests can also activate skills. Confirm discovery in your client after installation.
@@ -65,6 +66,7 @@ Estack adapts to an existing project. **daisyUI is supported.** So are custom Ta
 | [`estack-doctor`](skills/estack-doctor/SKILL.md) | Inspect an Elixir/Phoenix project's setup without modifying it |
 | [`estack-ecto`](skills/estack-ecto/SKILL.md) | Implement Ecto data access, ownership, changesets, transactions, and safe migrations |
 | [`estack-elixir`](skills/estack-elixir/SKILL.md) | Write idiomatic, version-compatible Elixir and handle errors explicitly |
+| [`estack-eval`](skills/estack-eval/SKILL.md) | Evaluate an agent skill or skill revision with paired tasks, blind workers, executable checks, and a separate reviewer |
 | [`estack-feature`](skills/estack-feature/SKILL.md) | Implement a Phoenix feature across domain, data, UI/API, and tests |
 | [`estack-liveview`](skills/estack-liveview/SKILL.md) | Build Phoenix LiveView forms, streams, components, hooks, and authenticated screens |
 | [`estack-mode`](skills/estack-mode/SKILL.md) | Route Elixir/Phoenix work to the relevant Estack workflow |
@@ -93,7 +95,17 @@ Helpers are opt-in. Installing skills does not install Hex dependencies, modify 
 
 Use Phoenix's generated instructions as the application baseline. Combine Estack with [UsageRules](https://github.com/ash-project/usage_rules) for dependency guidance and [Tidewave](https://github.com/tidewave-ai/tidewave_phoenix) for authorized development-runtime inspection. See [integration guidance](docs/integrations.md).
 
-See the [compatibility and validation matrix](docs/compatibility.md) for exactly what has been checked. v1 includes package/helper validation; it does not claim measured agent performance improvements or full interactive verification in every editor.
+See the [compatibility and validation matrix](docs/compatibility.md) for exactly what has been checked. v1.1 adds a paired eval workflow and a small published pilot. It does not establish agent performance improvements or full interactive verification in every editor. See [evaluations](docs/evals.md) for the protocol, cases, and observed results.
+
+## Evaluate a skill change
+
+```text
+Use estack-eval to compare this skill revision with the previous version.
+Use the same tasks and settings, keep workers blind, and have a separate
+reviewer score anonymous outputs after the executable checks.
+```
+
+The included runner prepares isolated project directories, freezes the case, records all outcomes, and exports blind review packets. Agent execution uses your existing host; no model API key is required by the runner. Start with the [evaluation guide](docs/evals.md).
 
 ## Origin
 

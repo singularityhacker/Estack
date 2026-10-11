@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "id": "task-isolation",
+  "title": "Vendor read isolation",
+  "skills": [
+    "estack-otp"
+  ],
+  "editable": [
+    "lib/vendor_read.ex"
+  ],
+  "checks": [
+    {
+      "id": "successful_read",
+      "critical": false
+    },
+    {
+      "id": "crash_isolated",
+      "critical": true
+    },
+    {
+      "id": "timeout_isolated",
+      "critical": true
+    },
+    {
+      "id": "no_orphan_after_timeout",
+      "critical": true
+    },
+    {
+      "id": "error_value_preserved",
+      "critical": false
+    },
+    {
+      "id": "caller_mailbox_clean",
+      "critical": false
+    }
+  ],
+  "rubric": [
+    {
+      "id": "lifecycle",
+      "description": "Handle task completion, crashes, timeout races, and cleanup explicitly.",
+      "max_score": 2
+    },
+    {
+      "id": "scope",
+      "description": "Preserve the synchronous read interface without new stateful infrastructure.",
+      "max_score": 2
+    },
+    {
+      "id": "clarity",
+      "description": "Use idiomatic task APIs with a clear return contract.",
+      "max_score": 2
+    }
+  ]
+}

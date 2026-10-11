@@ -1,0 +1,86 @@
+{
+  "graded_at": "2026-10-11T13:30:07.742810+00:00",
+  "results": [
+    {
+      "artifact_hash": "48b3bdc60d534c178876fb9b6414d3878689fa0e447714f4654541e7615c2864",
+      "checks": [
+        {
+          "detail": "passed",
+          "id": "receipt_before_ack",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "persist_failure_retried",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "duplicate_acknowledged",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "invalid_signature_rejected",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "raw_body_preserved",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "unexpected_persistence_failure",
+          "passed": true
+        }
+      ],
+      "eligible": true,
+      "id": "ledger-jja_q8uz",
+      "integrity_errors": [],
+      "snapshot_hash": "cdeaec334f7c11a76da63808fc460158fb24e718680b7f6e87ff358f616715bb",
+      "status": "completed"
+    },
+    {
+      "artifact_hash": "028c1cbabedeadaab6d2696c991aa289b31da802206dfb12b8d07d5efcd68465",
+      "checks": [
+        {
+          "detail": "passed",
+          "id": "receipt_before_ack",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "persist_failure_retried",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "duplicate_acknowledged",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "invalid_signature_rejected",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "raw_body_preserved",
+          "passed": true
+        },
+        {
+          "detail": "passed",
+          "id": "unexpected_persistence_failure",
+          "passed": true
+        }
+      ],
+      "eligible": true,
+      "id": "ledger-gejy54gu",
+      "integrity_errors": [],
+      "snapshot_hash": "bcab940495f1682c410e3945b001260e17f9f12163a13a5876e85395069477a7",
+      "status": "completed"
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,3 @@
+Repair `Gateway.VendorRead.run/3` in `lib/vendor_read.ex`. A checkout request uses it for optional read-only vendor enrichment. The Task.Supervisor is already started and passed in. Vendor failures and timeouts must not take down the caller.
+
+Return `{:ok, value}` when the function returns (even if value itself is an error tuple), `{:error, {:task_exit, reason}}` when it crashes, or `{:error, :timeout}` on timeout. Timed-out work must be stopped; don't leave children or task messages behind. Preserve unrelated messages in the caller's mailbox. This is a synchronous boundary for an ordinary request process, not a GenServer callback. No durable job queue is needed for this optional read.
